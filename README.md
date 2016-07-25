@@ -1,10 +1,10 @@
-**********************************************************
-* project: Open Source, Web-based IAT
-* authors: Winter Mason (m@winteram.com)
-* 	   Steven Allon 
-*	   Pinar Ozturk
-* source: https://github.com/winteram/IAT
-**********************************************************
+----------------------------------------------------------
+- project: Open Source, Web-based IAT
+- authors: Winter Mason (m@winteram.com)
+-      Steven Allon 
+-      Pinar Ozturk
+- source: https://github.com/winteram/IAT
+----------------------------------------------------------
 
 OVERVIEW:
 ---------
@@ -58,3 +58,34 @@ Category Label
 Category Index (which item within the category)
 Errors
 Reaction Time (in milliseconds)
+
+
+
+Instruction to run locally:
+---------------------------
+
+Prerequisites: [git-scm](https://git-scm.com/), [docker](https://www.docker.com/products/docker).
+Inside *nix terminal or windows command-line, cd into a directory of yours and:
+
+```bash
+git clone https://github.com/pazams/IAT.git
+cd IAT
+docker build -t my-iat .
+docker run -d -p 3000:80 --name my-running-iat my-iat
+docker exec -it my-running-iat bash
+# following 2 line inside docker image
+sh setup.sh 
+exit
+
+# now, in your browser navgiate to these urls:
+# http://localhost:3000/
+# http://localhost:3000/experimenter.php
+
+# DONE.
+
+# this setup is for local environment.
+# for production environment, additional security measures are needed
+# It is recommended to deny direct access to any php files except for index.php
+# More info at http://stackoverflow.com/questions/2679524/block-direct-access-to-a-file-over-http-but-allow-php-script-access
+# Also it is advised to remove http://localhost:3000/experimenter.php in production, or add authentication layer.
+```
