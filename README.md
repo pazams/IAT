@@ -86,5 +86,5 @@ http://localhost:3000/experimenter.php
 Note this setup is for local environment.
 For production environment, additional security measures are needed
 It is recommended to deny direct access to any php files except for index.php
-More info at http://stackoverflow.com/questions/2679524/block-direct-access-to-a-file-over-http-but-allow-php-script-access
-Also it is advised to remove http://localhost:3000/experimenter.php in production, or add authentication layer.
+Read more about it [here](http://stackoverflow.com/questions/2679524/block-direct-access-to-a-file-over-http-but-allow-php-script-access)
+Also it is advised to remove `experimenter.php` in production, or add authentication layer.
